@@ -13,7 +13,7 @@ This project is programmed using modern technologies such as HTML, CSS, JavaScri
 
 To view the source code and collaborate in the development of this project, you can visit the link below:
 
-[Project Link](project_url_here)
+
 
 ---
 <h1 align="center">Main Page</h1>
