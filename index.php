@@ -11,6 +11,9 @@ switch ($request) {
    
         require __DIR__ . "./view/index.php";
         break;
+        case("/test"):
+            require __DIR__ . "controller/test.php";
+            break;
 
         // case('regiser_form'):
         //     require __DIR__ . "./view/regiser_form.php";
@@ -18,7 +21,7 @@ switch ($request) {
         //     require __DIR__ . "/controller/registration_process.php";
         //     break;
     default:
-        require __DIR__ . "./view/error.php";
+        // require __DIR__ . "./view/error.php";
         // echo 'hello';
         break;   
 }

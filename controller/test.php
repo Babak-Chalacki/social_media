@@ -256,20 +256,20 @@ include "../controller/functions.php";
 
                                             <input id="textInput" name="text" type="text" style="width: 100%;" class="form-control mb-2" placeholder="comment" aria-label="Last name">
                                                 <input name="post_id" type="hidden" style="width: 100%;" class="form-control mb-2" value="<?php echo $userPost["post_id"] ?>" placeholder="comment" aria-label="Last name">
-                                                 <center><input id="InputBtn" value="add you comment" style="100%" type="button" onclick="send_comment(<?php echo $userPost['post_id']; ?>)" class="btn btn-primary mt-2"></center>
+                                                 <center><input id="InputBtn" value="up" type="button" onclick="send_comment(<?php echo $userPost['post_id']; ?>)" class="btn btn-primary mt-2"></center>
                                       </form>
                                             </div>
                                           </div>
 
                                           <hr class="mt-3" style="border-width:3px; margin-left:-10px; background-color:black;">
-                                          <div id="parentDiv<?php echo $userPost["post_id"] ?>" class="col-12 mb-2 mt-4">
+                                          <div  class="col-12 mb-2 mt-4">
                                             <?php foreach ($userPost["comments"] as $comment) : ?>
-                                              <div  class="row">
-                                                <div style="border-width:1px; border-style:solid;" class="col mt-2 p-2"><?php echo $comment["text"] ?>
-                                                  <!-- <span style="margin-left:260px;"> <?php // echo  $comment["firs //t_name"] . $comment["last_name"] ?></span> -->
+                                              <div id="parentDiv" class="row">
+                                                <div id="sonDic" style="border-width:1px; border-style:solid;" class="col mt-2 p-2"><?php echo $comment["text"] ?>
+                                                  <span style="margin-left:260px;"> <?php echo  $comment["first_name"] . $comment["last_name"] ?></span>
 
 
-                                                  <!-- <span style="margin-left:260px;"><?php // echo time2str($comment["time"]) ?></span> -->
+                                                  <span style="margin-left:260px;"><?php echo time2str($comment["time"]) ?></span>
                                                 </div>
                                               </div>
 
@@ -371,10 +371,6 @@ include "../controller/functions.php";
  
 
 async function send_comment(post_id) {
-
-  let $ =document
-let wrapper = $.getElementById("parentDiv"+post_id);
-
   let form = document.getElementById("form_comment" + post_id);
   let form_data = new FormData(form);
 
@@ -386,18 +382,16 @@ let wrapper = $.getElementById("parentDiv"+post_id);
   let y = await x.text();
   
   let parentDiv = document.getElementById("parentDiv" + post_id)
-let textInput = document.getElementById("textInput")
 
-let newDIV = document.createElement("DIV")
- newDIV.setAttribute('class',"row")
-let sonDiv = document.createElement("div")
-sonDiv.setAttribute('class',"col mt-2 p-2")
-sonDiv.setAttribute('style','border-width:1px; border-style:solid;')
-sonDiv.innerHTML = form_data.get("text")
-// wrapper.setAttribute("class",'row')
-newDIV.append(sonDiv)
-wrapper.append(newDIV)
-textInput.value = ""
+// let newDIV = document.createElement("DIV")
+//  newDIV.setAttribute('class',"col mt-2 p-2")
+// let sonDiv = document.createElement("p")
+// // sonDiv.setAttribute('class',"form-control mb-2")
+// // sonDiv.setAttribute('style','border-width:1px; border-style:solid;')
+// sonDiv.innerHTML = form_data.get("text")
+
+// newDIV.append(sonDiv)
+// parentDiv.append(newDIV)
 }
 // let textInput = document.getElementById("textInput")
 // let InputBtn = document.getElementById("InputBtn")
