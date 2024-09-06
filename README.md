@@ -28,6 +28,6 @@ To view the source code and collaborate in the development of this project, you 
 
 
 
-<h3 align="center">Profile</h3>
+<h3 align="center">User Profile</h3>
 
 ![Profile page screen](https://github.com/Babak-Chalacki/social_media/blob/5927d5bbb0934f584946239932aa07fad45aba0e/image/profle.png)
